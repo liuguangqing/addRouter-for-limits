@@ -35,6 +35,7 @@ router.beforeEach((to: any, from: any, next: any) => {
           {name:'404',path:'/404',component: NotFound},
           {path:'*',redirect: '/404'}
         ]));
+        
         Message.success('恭喜登录成功。。');
         next(to.path)
 

@@ -3,7 +3,7 @@
 ## 配置
 
 ```
-vue-cli3 + mockJs + ts + vue-router + vuex + element-ui + axios + addRouter
+vue-cli3 + mockJs + ts + vue-router + vuex-class + element-ui + axios + addRouter
 ```
 
 mock    接口模拟目录
@@ -32,4 +32,3 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-

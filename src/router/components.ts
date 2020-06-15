@@ -9,7 +9,7 @@ const routeMap: any = {
   addAdverse: () => import('../views/addAdverse.vue')
 };
 
-const routeMapTwo: any = require.context('@/', true, /\.vue$/)
+// const routeMapTwo: any = require.context('@/', true, /\.vue$/)
 // routeMapTwo.keys().forEach((key: any) => {
 //   let iteParam = key.substring(0, key.length - 4)
 //   let iteParamPATH = `.${key.substring(0, key.length - 4)}.vue`

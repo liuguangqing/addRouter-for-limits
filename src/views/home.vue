@@ -3,9 +3,15 @@
     <el-container class="container_parent">
       <el-header>
         <el-row type="flex" class="row-bg" justify="space-between">
-          <el-col :span="4"><div class="grid-content bg-purple" @click="goHome">首页</div></el-col>
-          <el-col :span="4"><div class="grid-content bg-purple-light">用户 {{fast_token}}</div></el-col>
-          <el-col :span="4"><div class="grid-content bg-purple" @click="quite">退出</div></el-col>
+          <el-col :span="4"><div class="grid-content bg-purple" @click="goHome">用户: {{fast_token}}</div></el-col>
+          <el-col :span="4"><div class="grid-content bg-purple-light">首页 header</div></el-col>
+          <el-col :span="4">
+            <div class="grid-content bg-purple">
+              <span @click="quite">退出</span>
+              <span style="visibility: hidden;">空</span>
+              <span @click="goMoblie">手机</span>
+            </div>
+          </el-col>
         </el-row>
       </el-header>
       <el-container  class="container_child">
@@ -29,9 +35,9 @@
                   <el-menu-item :index="ite2.path" v-for="(ite2, ind2) in ite.children" :key="ind2">{{ite2.name}}</el-menu-item>
                 </el-menu-item-group>
               </el-submenu>
-              <el-menu-item index="/home/index" v-else  :key="ind">
+              <el-menu-item :index="ite.path" v-else  :key="ind">
                 <i class="el-icon-menu"></i>
-                <span slot="title">/home/index</span>
+                <span slot="title">{{ite.name}}</span>
               </el-menu-item>
             </template>
           </el-menu>
@@ -63,6 +69,9 @@ export default class App extends Vue {
   }
   goHome(): void {
     this.$router.push('/')
+  }
+  goMoblie (): void {
+    this.$router.push('/mobile')
   }
   quite(): void {
     sessionStorage.setItem('username', '') // 清除用户信息
